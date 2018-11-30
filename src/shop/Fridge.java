@@ -18,4 +18,5 @@ public class Fridge extends Product {
     public boolean isFreezer() {
         return freezer;
     }
+
 }

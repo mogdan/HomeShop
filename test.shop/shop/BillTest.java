@@ -2,16 +2,17 @@ package shop;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class BillTest {
 
     @Test
-    public void GIVEN_CorrectValue_WHEN_BillCreation_THEN_GoodResult(){
+    private void GIVEN_CorrectValue_WHEN_BillCreation_THEN_GoodResult() {
         Customer client = new Customer("Bastien","Prades-le-Lez");
         Product produit = new Product("chips", "chips piquant", 4);
-        Bill vente = new Bill(client);
+        Delivery relai = new RelayDelivery(26);
+        Bill vente = new Bill(client, relai);
         //vente.addProduct(4,produit);
 
         assertTrue(client.getFullname()== "Bastien");
@@ -19,7 +20,7 @@ class BillTest {
         assertTrue(produit.getName()=="chips");
         assertTrue(produit.getDescription()=="chips piquant");
         assertTrue(produit.getPrice()==4);
-        //assertTrue(vente.getCustomer()==client);
+        assertTrue(vente.getCustomer() == client);
 
     }
 
