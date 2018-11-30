@@ -44,4 +44,11 @@ public class Product {
     public void buy(Bill bill,Integer quantity){
 
     }
+
+    public Product(String name, String description, double price){
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        System.out.println("Vous veneez de créer le produit ("+name+ " / "+description+") au prix de "+price+"€");
+    }
 }

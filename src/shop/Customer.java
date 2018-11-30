@@ -18,4 +18,11 @@ public class Customer {
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
+
+    public Customer(String fullname, String address){
+        this.fullname = fullname;
+        this.address = address;
+        System.out.println("Vous venez de créer le client "+fullname+" habitant à l'adresse "+address);
+    }
+
 }
