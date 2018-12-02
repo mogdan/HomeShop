@@ -33,4 +33,13 @@ public class Bill {
         System.out.println("Vous venez de rajouter " + product.getName() + " en " + quantity + " exemplaire(s)");
 
     }
+
+    public void generate(Writer writer) {
+
+    }
+
+    public double getTotal() {
+        return 0;
+
+    }
 }
