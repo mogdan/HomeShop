@@ -16,6 +16,25 @@ public class Main {
         bill.addProduct(tv, 1);
         bill.addProduct(fridge, 1);
 
+        //bill.generate(new FileWriter("facture leblanc"));
+        bill.generate(new Writer() {
+            @Override
+            public void start() {
+
+            }
+
+            @Override
+            public void writeLine(String line) {
+                System.out.println(line);
+
+            }
+
+            @Override
+            public void stop() {
+
+            }
+        });
+
     }
 
 }

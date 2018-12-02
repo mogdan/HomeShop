@@ -49,6 +49,6 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
-        System.out.println("Vous venez de créer le produit (" + name + " / " + description + ") au prix de " + price + "€");
+        //System.out.println("Vous venez de créer le produit (" + name + " / " + description + ") au prix de " + price + "€");
     }
 }

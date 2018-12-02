@@ -4,26 +4,19 @@ public interface Writer {
     /**
      * Start writing process
      */
-    void start() {
-
-
-    }
+    void start();
 
     /**
      * Write a new line
      *
      * @param line line text to add
      */
-    void writeLine(String line) {
-
-    }
+    void writeLine(String line);
 
     /**
      * Stop writing process
      */
 
-    void stop() {
-
-    }
+    void stop();
 
 }

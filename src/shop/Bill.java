@@ -11,7 +11,6 @@ public class Bill {
     public Bill(Customer customer, Delivery delivery) {
         this.customer = customer;
         this.delivery = delivery;
-        System.out.println("Vous venez de créer la commande pour le client " + customer.getFullname());
     }
 
     public Customer getCustomer() {
@@ -30,16 +29,44 @@ public class Bill {
      */
     public void addProduct(Product product, Integer quantity) {
         this.products.put(product, 1);
-        System.out.println("Vous venez de rajouter " + product.getName() + " en " + quantity + " exemplaire(s)");
-
     }
 
     public void generate(Writer writer) {
-
+        writer.start();
+        writer.writeLine("HomeShop Compagnie");
+        writer.writeLine("1 Place Charles de Gaulle, 75008 Paris");
+        writer.writeLine("");
+        writer.writeLine("Facture à l'attention de : ");
+        writer.writeLine(customer.getFullname());
+        writer.writeLine(customer.getAddress());
+        writer.writeLine("");
+        writer.writeLine("Mode de livraison : " + delivery.getInfo() + " " + delivery.getPrice() + "€");
+        writer.writeLine("");
+        writer.writeLine("Produits : ");
+        writer.writeLine("-----------------------------------------------------");
+        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+            Product product = entry.getKey();
+            Integer quantity = entry.getValue();
+            writer.writeLine(product.getName() + " - " + product.getPrice() + " - " + quantity + " unité(s)");
+            writer.writeLine(product.getDescription());
+            writer.writeLine("");
+        }
+        writer.writeLine("Livraison : " + delivery.getPrice());
+        writer.writeLine("-----------------------------------------------------");
+        writer.writeLine("Total : " + this.getTotal());
+        writer.stop();
     }
 
     public double getTotal() {
-        return 0;
-
+        double total = 0;
+        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+            Product product = entry.getKey();
+            Integer quantity = entry.getValue();
+            total += product.getPrice() * quantity;
+        }
+        total += delivery.getPrice();
+        return total;
     }
+
+
 }

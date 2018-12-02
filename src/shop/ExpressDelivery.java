@@ -10,11 +10,18 @@ public class ExpressDelivery implements Delivery {
     @Override
     public double getPrice() {
         if (deliveryAddress == "Paris") {
-            System.out.println(" La livraison express à Paris est de 6.99€");
+
             return 6.99;
         } else {
-            System.out.println("La livraison express hors Paris est de 9.99€");
+
             return 9.99;
         }
+    }
+
+    @Override
+    public String getInfo() {
+        if (deliveryAddress.equals("Paris"))
+            return "livraison express Paris";
+        else return "livraison express hors Paris";
     }
 }
