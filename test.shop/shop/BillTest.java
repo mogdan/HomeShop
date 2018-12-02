@@ -3,6 +3,7 @@ package shop;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BillTest {
     private String output;
@@ -44,5 +45,11 @@ public class BillTest {
         bill.addProduct(tv, 1);
         bill.addProduct(fridge, 1);
         assertEquals(870.98, bill.getTotal(), 0.01);
+    }
+
+    @Test
+    public void Given_emptyProductList_When_generatingBill_Then_catchExceptio() {
+        Bill bill = new Bill(customer, lowCostRelayDelivery);
+        assertThrows(NoProductInBillException.class, () -> bill.generate(writerMock));
     }
 }

@@ -12,28 +12,32 @@ public class Main {
         Delivery express = new ExpressDelivery("Paris");
 
         Bill bill = new Bill(customer, express);
-        bill.addProduct(cafe, 1);
-        bill.addProduct(tv, 1);
-        bill.addProduct(fridge, 1);
+//        bill.addProduct(cafe, 1);
+//        bill.addProduct(tv, 1);
+//        bill.addProduct(fridge, 1);
 
-        //bill.generate(new FileWriter("facture leblanc"));
-        bill.generate(new Writer() {
-            @Override
-            public void start() {
-
-            }
-
-            @Override
-            public void writeLine(String line) {
-                System.out.println(line);
-
-            }
-
-            @Override
-            public void stop() {
-
-            }
-        });
+        try {
+            bill.generate(new FileWriter("facture leblanc.txt"));
+        } catch (NoProductInBillException e) {
+            System.out.println("La commande ne comporte pas d'article, la facture n'est donc pas éditée");
+        }
+//        bill.generate(new Writer() {
+//            @Override
+//            publ ic void start() {
+//
+//            }
+//
+//            @Override
+//            public void writeLine(String line) {
+//                System.out.println(line);
+//
+//            }
+//
+//            @Override
+//            public void stop() {
+//
+//            }
+//        });
 
     }
 
