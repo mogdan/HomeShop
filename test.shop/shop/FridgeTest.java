@@ -1,6 +1,7 @@
 package shop;
 
 import org.junit.jupiter.api.Test;
+import product.Fridge;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

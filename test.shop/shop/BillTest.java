@@ -1,6 +1,13 @@
 package shop;
 
+import delivery.Delivery;
+import delivery.RelayDelivery;
+import exception.NoProductInBillException;
 import org.junit.jupiter.api.Test;
+import product.Fridge;
+import product.Product;
+import product.Television;
+import writer.Writer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

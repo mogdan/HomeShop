@@ -1,6 +1,8 @@
 package shop;
 
 
+import delivery.Delivery;
+import delivery.ExpressDelivery;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
