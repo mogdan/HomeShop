@@ -12,9 +12,9 @@ public class Main {
         Delivery express = new ExpressDelivery("Paris");
 
         Bill bill = new Bill(customer, express);
-//        bill.addProduct(cafe, 1);
-//        bill.addProduct(tv, 1);
-//        bill.addProduct(fridge, 1);
+        bill.addProduct(cafe, 1);
+        bill.addProduct(tv, 1);
+        bill.addProduct(fridge, 1);
 
         try {
             bill.generate(new FileWriter("facture leblanc.txt"));
