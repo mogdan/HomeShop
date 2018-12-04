@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BillServletTest {
 
     @Test
-    public void Given_twoParams_When_splitParans_Then_fillMapCorrectly() {
+    public void Given_twoParams_When_splitParams_Then_fillMapCorrectly() {
         BillServlet billServlet = new BillServlet();
         Map<String, String> params = billServlet.splitParameters("p1=v1&p2=v2");
         assertEquals(2, params.size());

@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 public class BillServlet extends HttpServlet {
-    List<Product> products = new ArrayList<Product>();
+    List<Product> products = new ArrayList<>();
 
     @Override
     public void init() throws ServletException {
